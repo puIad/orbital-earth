@@ -1,0 +1,56 @@
+/* src/styles/EarthViewer.module.css */
+.viewer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Cesium's own widget container should fill the div cleanly */
+.viewer :global(.cesium-widget),
+.viewer :global(.cesium-widget canvas) {
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+/* Keep the legally-required imagery credits, but style them to fit the HUD */
+.credits {
+  font-family: var(--font-mono) !important;
+  font-size: 10px !important;
+  color: var(--text-faint) !important;
+  filter: saturate(0.6);
+}
+
+/* WebGL-unavailable fallback */
+.fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(900px 600px at 50% 40%, #0b1626 0%, var(--bg-space) 70%);
+  padding: 24px;
+}
+
+.fallbackInner {
+  max-width: 420px;
+  text-align: center;
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  background: var(--panel);
+  padding: 28px 26px;
+}
+
+.fallbackInner h2 {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  letter-spacing: 2px;
+  color: var(--amber);
+}
+
+.fallbackInner p {
+  margin: 0;
+  color: var(--text-dim);
+  line-height: 1.5;
+}

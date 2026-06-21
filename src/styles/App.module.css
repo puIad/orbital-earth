@@ -1,0 +1,74 @@
+/* src/styles/App.module.css */
+.app {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-space);
+}
+
+/* Top-left command bar: brand mark + search */
+.topbar {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 10;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 46px;
+  padding: 0 16px;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  white-space: nowrap;
+}
+
+.brandThin {
+  font-weight: 500;
+  color: var(--cyan);
+  text-shadow: var(--glow-cyan);
+}
+
+.glyph {
+  color: var(--cyan);
+  font-size: 20px;
+  text-shadow: var(--glow-cyan);
+  animation: spin 14s linear infinite;
+}
+
+.searchSpinner {
+  display: flex;
+  align-items: center;
+  height: 46px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    flex-direction: column;
+    left: 12px;
+    right: 12px;
+    top: 12px;
+  }
+  .brand {
+    height: 40px;
+    font-size: 15px;
+  }
+}

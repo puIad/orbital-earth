@@ -1,0 +1,61 @@
+/* src/styles/index.css — global theme + reset for the Orbital mission-control HUD */
+:root {
+  /* Color story: deep-space neutral + cyan signal + amber warning accent */
+  --bg-space: #04060c;
+  --panel: rgba(9, 15, 26, 0.72);
+  --panel-solid: #0a1018;
+  --panel-border: rgba(86, 173, 214, 0.22);
+  --hairline: rgba(86, 173, 214, 0.14);
+
+  --cyan: #38e1ff;
+  --cyan-dim: rgba(56, 225, 255, 0.55);
+  --amber: #ffb547;
+  --green: #4ade80;
+
+  --text: #d6e7f2;
+  --text-dim: #6f879b;
+  --text-faint: #44586b;
+
+  --glow-cyan: 0 0 18px rgba(56, 225, 255, 0.35);
+
+  /* Type system (no Inter/Roboto/system defaults) */
+  --font-display: 'Orbitron', sans-serif;
+  --font-ui: 'Rajdhani', sans-serif;
+  --font-mono: 'Share Tech Mono', monospace;
+
+  --radius: 10px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg-space);
+  color: var(--text);
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Global focus treatment — accessible, on-theme */
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+button {
+  font-family: var(--font-ui);
+  cursor: pointer;
+}

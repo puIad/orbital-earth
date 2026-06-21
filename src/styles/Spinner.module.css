@@ -1,0 +1,26 @@
+/* src/styles/Spinner.module.css */
+.wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ring {
+  display: inline-block;
+  border-radius: 50%;
+  border: 2px solid rgba(56, 225, 255, 0.18);
+  border-top-color: var(--cyan);
+  animation: rotate 0.7s linear infinite;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}

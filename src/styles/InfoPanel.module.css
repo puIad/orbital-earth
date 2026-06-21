@@ -1,0 +1,122 @@
+/* src/styles/InfoPanel.module.css — the memorable anchor: a flight-console readout */
+.panel {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 10;
+  width: 248px;
+  padding: 14px 16px 12px;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+/* Subtle scanline texture over the console */
+.panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(56, 225, 255, 0.04) 0px,
+    rgba(56, 225, 255, 0.04) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  mix-blend-mode: screen;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-faint);
+  box-shadow: none;
+}
+.dot[data-on='true'] {
+  background: var(--green);
+  box-shadow: 0 0 10px var(--green);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--text);
+}
+
+.mode {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--cyan);
+}
+
+.readout {
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 4px 0;
+}
+
+.row dt {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--text-dim);
+}
+
+.row dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+  color: var(--cyan);
+  text-shadow: 0 0 12px rgba(56, 225, 255, 0.25);
+}
+
+.share {
+  width: 100%;
+  margin-top: 12px;
+  padding: 9px 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: var(--text);
+  background: rgba(56, 225, 255, 0.08);
+  border: 1px solid var(--panel-border);
+  border-radius: 7px;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.share:hover {
+  background: rgba(56, 225, 255, 0.16);
+  border-color: var(--cyan-dim);
+}
+
+@media (max-width: 640px) {
+  .panel {
+    width: calc(100% - 24px);
+    right: 12px;
+    bottom: 12px;
+  }
+}
