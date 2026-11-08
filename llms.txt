@@ -1,0 +1,14 @@
+# orbital-earth
+
+> Web-based 3D interactive globe built with React (Vite) and CesiumJS. Search any place with OpenStreetMap Nominatim, fly the camera there, read live lat/lon/altitude telemetry, click the globe to identify a point, and share the camera view as a URL. Runs without an API key; an optional free Cesium ion token adds photoreal satellite imagery and 3D terrain.
+
+## Docs
+
+- [README.md](https://github.com/puIad/orbital-earth/blob/main/README.md): setup, features, how the Cesium and Vite wiring works
+
+## Source
+
+- [src/components/EarthViewer.jsx](https://github.com/puIad/orbital-earth/blob/main/src/components/EarthViewer.jsx): globe and camera
+- [src/components/SearchBar.jsx](https://github.com/puIad/orbital-earth/blob/main/src/components/SearchBar.jsx): geocoding search
+- [src/lib/nominatim.js](https://github.com/puIad/orbital-earth/blob/main/src/lib/nominatim.js): Nominatim client
+- [src/lib/cameraUrl.js](https://github.com/puIad/orbital-earth/blob/main/src/lib/cameraUrl.js): shareable camera URL
